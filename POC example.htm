@@ -1,0 +1,62 @@
+<!-- MENU-LOCATION=NONE -->
+<HTML>
+<HEAD>
+<TITLE>Hello, World</TITLE>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+function SimpleAPIcall() {
+var settings = {
+"async": true,
+"crossDomain": true,
+"url": "https://ws.mir3.com/services/v1.2/mir3",
+"method": "POST",
+"headers": {
+"content-type": "application/xml",
+"cache-control": "no-cache",
+"postman-token": "34ffbbd0-cde3-4862-169c-4ab8b5ef145c"
+},
+"data": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ws=\"http://www.mir3.com/ws\">\n <soapenv:Header/>\n <soapenv:Body>\n <ws:initiateNotifications>\n <ws:apiVersion>4.7</ws:apiVersion>\n <ws:authorization>\n <ws:username>uc@salesforce.com</ws:username>\n <ws:password>@1Dummypassword</ws:password>\n </ws:authorization>\n <ws:initiateOneNotification>\n <ws:notification>Stephen-UC-Demo</ws:notification>\n </ws:initiateOneNotification>\n </ws:initiateNotifications>\n </soapenv:Body>\n</soapenv:Envelope>"
+}
+
+$.ajax(settings).done(function (response) {
+console.log(response);
+alert (console.log(response));
+
+alert("MIR3 Alert Complete!");
+	return; 
+
+});
+}
+</script>
+
+
+</SCRIPT>
+</HEAD>
+<BODY>
+<form name="form1" method="post" action="">
+  <hr>
+  <label for="Resultbox"></label>
+</form>
+<p>
+  <input type="submit" name="API test box" id="API test box" value="Send Sev1 T10 Alert" onClick="SimpleAPIcall()" >
+</p>
+
+<p>
+  <input type="submit" name="API test box2" id="API test box2" value="Get a UCL">
+</p>
+<p>
+  <input type="submit" name="API test box3" id="API test box3" value="Text Chris">
+</p>
+<p>
+  <input type="submit" name="API test box5" id="API test box5" value="Start CSG Bridge GoToMeeting">
+  <input type="submit" name="API test box4" id="API test box4" value="MIR3: AMER CSG bridge participants">
+  <input type="submit" name="API test box6" id="API test box6" value="Open my Script">
+</p>
+<p><strong>Result Box</strong></p>
+<p>
+  <textarea name="Resultbox" id="Resultbox" cols="45" rows="5"></textarea>
+</p>
+</BODY>
+</HTML>
